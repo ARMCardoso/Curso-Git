@@ -23,7 +23,7 @@ function calcularComanda() {
     porcentagemGorjeta = 0;
   }
 
-  const gorjeta = valorConta * (porcentagemGorjeta / 0);
+  const gorjeta = valorConta * (porcentagemGorjeta / 100);
 
   if (isNaN(valorConta)) {
     valorConta = 0;
@@ -77,3 +77,22 @@ function atualizarComanda() {
     comandaDiv.appendChild(itemHtml);
   }
 }
+
+function LimparCampos(){
+  comanda = [];
+  atualizarComanda = [];
+  document.getElementById("porcentagemgorjeta").value = "";
+  document.getElementById("ItensConsumidos").selectedIndex = 0;
+
+  const resultadoGorjeta = document.getElementById("resultadogorjeta");
+  resultadoGorjeta.innerHTML = "";
+
+  fecharPopup();
+}
+
+  function fecharPopup(){
+
+    const popup = document.getElementById("popup");
+    popup.style.display = "none";
+
+  }
